@@ -1,0 +1,5 @@
+{
+  "name": "Multi-Level Login System",
+  "description": "A comprehensive multi-level login system with four distinct user roles (BMMU, DMMU, SMMU, State IT Manager), featuring role-specific dashboards, captcha verification, and session management.",
+  "requestFramePermissions": []
+}
