@@ -10,7 +10,7 @@ export const BMMUDashboard: React.FC = () => {
 
   const welcomeContent = (
      <p className="text-lg">
-      Welcome to the Block-level dashboard, <span className="font-semibold">{user?.name} ({user?.id})</span>.
+      Welcome to the Block--level dashboard, <span className="font-semibold">{user?.name} ({user?.id})</span>.
     </p>
   );
 
