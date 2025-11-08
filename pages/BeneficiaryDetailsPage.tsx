@@ -6,6 +6,8 @@ import { BENEFICIARY_DATA } from '../beneficiaryData';
 import { Beneficiary, LoginType } from '../types';
 import { SortAscIcon, SortDescIcon } from '../components/Icons';
 
+import { BeneficiaryModal } from '@/components/BenificiaryModal';
+
 const ITEMS_PER_PAGE = 10;
 type SortKey = keyof Beneficiary;
 
@@ -236,6 +238,11 @@ export const BeneficiaryDetailsPage: React.FC = () => {
           </div>
         )}
       </div>
+       <BeneficiaryModal beneficiary={undefined} onClose={function (): void {
+        throw new Error('Function not implemented.');
+      } } onSave={function (beneficiary: Beneficiary): void {
+        throw new Error('Function not implemented.');
+      } }/>
     </DashboardLayout>
   );
 };
