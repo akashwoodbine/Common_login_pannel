@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const TmsIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -42,3 +41,4 @@ export const SortDescIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => 
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h13M3 8h9M3 12h9m-9 4h6m4 0l4 4m0 0l4-4m-4 4V4" />
     </svg>
 );
+

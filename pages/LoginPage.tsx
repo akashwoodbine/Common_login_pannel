@@ -5,12 +5,14 @@ import { LoginType, User } from '../types';
 import { useAuth } from '../context/AuthContext';
 import { SMMU_DATA, BMMU_DATA } from '../constants';
 import { Captcha } from '../components/Captcha';
+import { useShared } from "../components/SharedContext";
 
 const loginTypeMap: { [key: string]: LoginType } = {
   'bmmu': LoginType.BMMU,
   'dmmu': LoginType.DMMU,
   'smmu': LoginType.SMMU,
   'state-it-manager': LoginType.ADMIN,
+  'pmu-it-manager': LoginType.ADMIN,
 };
 
 export const LoginPage: React.FC = () => {
@@ -18,6 +20,14 @@ export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const location = useLocation();
+
+  const [defaultPassword, setDefaultPassword] = useState<string>("");
+  useEffect(() => {
+    fetch("http://localhost:5000/api/password")
+      .then(res => res.json())
+      .then(data => setDefaultPassword(data.password))
+      .catch(err => console.error("Error fetching default password:", err));
+  }, []);
 
   const { blockId, blockName, districtName } = location.state || {};
 
@@ -79,8 +89,8 @@ export const LoginPage: React.FC = () => {
         setError('Password must be at least 6 characters long.');
         return;
     }
-
-    if (password !== '123456') {
+    
+    if (password !== defaultPassword) {
       setError('Invalid username or password.');
       return;
     }

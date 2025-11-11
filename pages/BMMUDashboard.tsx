@@ -27,7 +27,7 @@ export const BMMUDashboard: React.FC = () => {
           <p className="text-gray-600 mt-2">
             View and generate block-level reports.
           </p>
-        </div>
+        </div> 
 
         {/* Analytics Card */}
         <div className="bg-white p-6 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
@@ -66,3 +66,4 @@ export const BMMUDashboard: React.FC = () => {
     </DashboardLayout>
   );
 };
+
